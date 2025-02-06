@@ -2,14 +2,22 @@
 <html>
 <head>
     <style>
-        body {background-color: rgb(174, 124, 74);}
+        body {background-color: rgba(177, 255, 208, 0.736); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
         td, tr {padding: 15px;}
         table, td, tr {border: 1px solid rgb(0, 0, 0); background-color: aliceblue;}
+        footer {font-family: fantasy; font-size: large;}
+        li {font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(67, 25, 25);}
     </style>
     <title>Lydia's Web Page</title>
 <link rel="style" href="style.css">
 </head> 
 <body>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="https://sites.owls.plus:9214/JSPWiki/Wiki.jsp?page=WebDev.2025">WebDev Page</a></li>
+        <li><a href="#home">Home</a></li>
+
     <h1>Coffee</h1>
     <p>
         Here's the rundown:
@@ -42,9 +50,24 @@
             </tr>
         </thread>
     </table>
-    <footer>Thanks for reading!</footer>
+    <h3>What is your favorite drink?</h3>
+    <form>
+        <label for="drink">Drink:</label>
+        <input type="text" id="drink" drink="drink"><br>
+        <p>Is the drink caffinaited?</p>
+        <input type="radio" id="yes" name="caffinaited?" value="Yes">
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="caffinaited?" value="No">
+        <label for="no">No</label><br>
+        <input type="submit" value="Submit">
+
+
+
+    </form>
+    <footer><i>Thanks for reading!</i></footer>
 </body>
 <img src="coffee.jpg" alt="Coffee" title="Latte" width ="500">
 
-<iframe width="1014" height="470" src="https://www.youtube.com/embed/XfELJU1mRMg" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="696" height="392" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </html>
