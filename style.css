@@ -1,0 +1,8 @@
+p {font-family: 'Times New Roman', Times, serif;}
+a:visited {color:brown}
+a:link {color:blue}
+td, tr {padding: 15px;}
+td, tr {padding: 15px;}
+table, td, tr {border: 1px solid rgb(0, 0, 0); background-color: aliceblue;}
+footer {font-family: fantasy; font-size: medium;}
+li {font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(67, 25, 25);}
