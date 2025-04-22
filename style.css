@@ -1,8 +1,43 @@
-p {font-family: 'Times New Roman', Times, serif;}
-a:visited {color:brown}
-a:link {color:blue}
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+        body {background-color: #f36d68c0; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+a:visited {color:rgb(0, 0, 0)}
+
+a:link {color:rgba(255, 255, 255)}
+
+body {
+    background-color: #f36d688a;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 td, tr {padding: 15px;}
-td, tr {padding: 15px;}
-table, td, tr {border: 1px solid rgb(0, 0, 0); background-color: aliceblue;}
-footer {font-family: fantasy; font-size: medium;}
-li {font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(67, 25, 25);}
+
+table, td, tr {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #F3ECDC;
+}
+footer {
+    font-family: fantasy; font-size: medium;
+}
+
+li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(67, 25, 25);
+}
+
+ul.horizontal-list {
+    background-color: #7AD1E4;
+    border-style: double;
+    list-style-type: none;
+    margin: 0;
+    padding: auto;
+    display: flex;
+
+}
+
+ul.horizontial-list li {
+    margin: auto;
+    kerning: 20px;
+}

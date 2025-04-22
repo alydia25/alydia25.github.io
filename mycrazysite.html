@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your page description here">
+  <title>Profilio Site</title>
+  <link rel="stylesheet" href="crazystyle.css">
+  <style>
+    /* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #fdf6f0; /* Soft off-white, warm tone */
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 12px 12px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #ffeede;
+  color: #222;
+}
+
+/* Optional active link */
+nav ul li a.active {
+  background-color: #ffd2b3;
+  color: #000;
+}
+
+  .preview-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease;
+    background: #fff;
+  }
+
+  .preview-container:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  .preview-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transform-origin: center center;
+    border: none;
+    pointer-events: none;
+  }
+
+  .preview-container:hover .preview-iframe {
+    transform: translate(-50%, -50%) scale(0.95);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+  }
+  
+  .preview-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    z-index: 2;
+  }
+ </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="mycrazysite.html">Home</a></li>
+				<li><a href="mycrazysite.html">Projects</a></li>
+				<li><a href="resume.html">Resume</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+      <section>
+         <h1>Profolio Site</h1>
+      </section>
+      <section>
+         <h3>Projects</h3>   
+         <div class="preview-container">
+            <!-- iframe as non-interactive preview -->
+            <iframe 
+            src="projects/to-do/to-do.html" 
+            class="preview-iframe">
+            </iframe>
+      
+            <!-- clickable overlay -->
+            <a href="projects/to-do/to-do.html" target="_blank" class="preview-link"></a>
+         </div>
+      </section>
+  </main>
+
+  <footer>
+      <p style="font-size: smaller;">&copy; 2025 alp</p>
+  </footer>
+
+  <!-- Scripts at the end for better page load performance -->
+  <script src="script.js"></script>
+</body>
+</html>

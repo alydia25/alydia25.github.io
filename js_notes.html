@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+    <title>JavaScript Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <!--
+    <script src="myscripts.js"> #use this for refrence to external JS file if in same directory
+    -->
+    <!--
+    <script src="scripts/myscripts.js"> #use when if in a subdirectory
+    -->
+    <!--
+    <script src="link/myscripts.js"> #when using JS from a particular site (such as your own)
+    -->
+</head> 
+<body>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="https://sites.owls.plus:9214/JSPWiki/Wiki.jsp?page=WebDev.2025">WebDev Page</a></li>
+        <li><a href="fun.html">Fun</a></li>
+    </ul>
+    <h1>Notes for Webdev JS Section</h1>
+    <hr>
+
+    <h2>Chapter 1: Bird's Eye View</h2>
+    <p>JavaScript (JS) is considered web coding and primarly client side</p>
+    <p>Pretty much universal with few exceptions</p>
+    <p>Only need a text editor and a browser to code JS, programs to help edit are reccomended but not required</p>
+    <noscript>
+        <p>Use noscript tag to show that JS is disabled!</p>
+        <p>Most people have this enabled, but there are the exceptions!</p>
+        <p>Can use this to link a non-JS page for the user</p>
+    </noscript>
+    <p>Use // for single line comments in JS code</p>
+    <p>Use /* and */ for multi line comments in JS code</p>
+    <p>Can use script tag in header to link exernal JS, similar to CSS, or infile between the script tags.</p>
+    <p>Short infile lines are okay, but if the JS code is long, then put it in a seprate file to avoid clutter</p>
+    <p>If using external, must be plain text format, use the .js extension, DO NOT use script tag in the file, jsut statements as one would within the HTML</p>
+    <p>Statements outside of functions executed automatically when ref is discovered, statements within a function not executed until function is called.</p>
+    <hr>
+
+    <h2>Chapter 2: Understanding Variables</h2>
+    <p>Can declare a variable with <b>let</b></p>
+    <p>Can only declare a variable once, although you can use it mutiple times</p>
+    <p>Use comments to describe variables</p>
+    <p>Declare variables <i>before</i> using!</p>
+    <p>Declare the variable as close as possible to where it is first used</p>
+    <p>Store a variable with setting <i>variableName = value;</i></p>
+    <p><i><b>const</b> variableName = value;</i> is another way to set values</p>
+    <p><u><b>Const vs Let:</b></u></p>
+    <p>Using Const is a nonchanging value and helps with remembering, trying to assign a new one will get an error with this type</p>
+    <p>Only use <b>let</b> for variables that will change</p>
+    <p>When getting data from user, use <b>prompt(type, initialValue);</b> with value type as type, and initialValue as optional for what appears in the prompt box</p>
+    <p><b>prompt();</b> will always return a value, if cancelled, will return null</p>
+    <p>For naming, first character must be an underscore or a letter, but never a number</p>
+    <p>The rest of the variable name can be whatever you want, but no spaces, symbols, punctuiation marks, or other characters</p>
+    <p>Variable names are case sensitive</p>
+    <p>No length limit to name</p>
+    <p>Cannot use a "reserved word" as a name (ex: let, const, var, alert, or prompt)</p>
+    <p>Make names descriptive</p>
+    <p>Avoid single letter names</p>
+    <p>Use mutiple words with no spaces</p>
+    <p>Use different naming conventions for HTML, CSS, and JS</p>
+    <p>Differentiate variable naems from JS keywords</p>
+    <p>Do not make names too long</p>
+    <p><b>Data Types</b> are very important</p>
+    <p>intergers and floating-point numbers are numeric</p>
+    <p>floating-point can use exponential notation</p>
+    <p>Hexadecimal intergers (base-16)</p>
+    <p>String Literals is a sequence of one or more numbers, letters, or punctuation parks in either double or single quotes</p>
+    <p>Illegal to insert in a strong one or more instances of same quotation mark that encloses the string</p>
+    <table>
+        <thead>Escape Sequences</thead>
+        <tr>
+            <td>Escape Sequence</td>
+            <td>Character it Represents</td>
+        </tr>
+        <tr>
+            <td>\'</td>
+            <td>single quotation mark</td>
+        </tr>
+        <tr>
+            <td>\"</td>
+            <td>double quotation mark</td>
+        </tr>
+        <tr>
+            <td>\b</td>
+            <td>backspace</td>
+        </tr>
+        <tr>
+            <td>\f</td>
+            <td>form feed</td>
+        </tr>
+        <tr>
+            <td>\n</td>
+            <td>new line</td>
+        </tr>
+        <tr>
+            <td>\r</td>
+            <td>carrige return</td>
+        </tr>
+        <tr>
+            <td>\t</td>
+            <td>tab</td>
+        </tr>
+        <tr>
+            <td>\\</td>
+            <td>backslash</td>
+        </tr>
+    </table>
+    <p>Boolean literals are tied directly to a variable, either true or false</p>
+    <hr>
+
+    <h2>Chapter 3: Building Expressions</h2>
+    <p><b>Expressions</b> are a collection of symbols, words, and numbers that performs a calculation and produces a result.</p>
+    <p><i>Operands</i> are input values for an expression</p>
+    <p><i>Operators</i> are symbols that represent a particular action performed on one (or more) operands</p>
+    <script>
+        let tipAmount = billTotal * tipPercent; //everything to the right is the expression, the variables on the right are the operands, and the * is the operator
+    </script>
+    <p>x = x + y can also be x += y</p>
+    <p><b>Incrementing</b> allows to add one to a variable by using ++</p>
+    <script>
+        let someVar = 0;
+        document.write(someVar);
+        document.write("\n:This is before incrementing\n ")
+        someVar++;
+        document.write(someVar);
+        document.write("\n:This is after incrementing")
+    </script>
+    <p><b>Decrement</b> does the same thing but minus one.</p>
+    <script>
+        let someOtherVar = 0;
+        document.write(someOtherVar);
+        document.write("\n:This is before decrementing\n ")
+        someOtherVar--;
+        document.write(someOtherVar);
+        document.write("\n:This is after decrementing")
+    </script>
+    <p>You can also break up long statements with "+"</p>
+    <script>
+        const message1 = "What" + "are those";
+        document.write(message1)
+    </script>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 4: Controlling the Flow of JavaScript</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 5: Harnessing the Power of Functions</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 6: Playing with the Document Object Model (DOM)</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 7: Working with Arrays</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 8: Manipulating Strings, Dates, and Numbers</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 9: Storing User Data in the Browser</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 10: Debugging Your Code</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <h2>Chapter 11: Processing Form Data</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <hr>
+
+    <footer>
+        <script>
+            document.write("This page is Copyright " + new Date(). getFullYear())
+        </script>
+    </footer>
+</body>

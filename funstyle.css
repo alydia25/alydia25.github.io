@@ -1,0 +1,41 @@
+a:link {color:rgb(154, 154, 255)}
+
+
+a:visited {color:rgb(56, 199, 0)}
+
+
+body {
+    background-color: rgb(109, 53, 15);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+footer {
+    font-size: small;
+    color: beige;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: beige;
+}
+
+
+li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(67, 25, 25);
+}
+
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    color: beige;
+}
+
+table, td, tr {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: aliceblue;
+}
+
+
+td, tr {padding: 15px;}

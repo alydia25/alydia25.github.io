@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+    <link id="theme" rel="stylesheet" href="css/cotton-candy.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        .pixelify-sans-head {
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeSelect = document.getElementById("theme-select");
+            const themeLink = document.getElementById("theme");
+
+            // Theme file paths
+            const themePaths = {
+                "cotton-candy": "css/cotton-candy.css",
+                "autumn": "css/autumn.css",
+                "swamp": "css/swamp.css",
+                "sunflower": "css/sunflower.css",
+            };
+
+            // Load saved theme from localStorage
+            const savedTheme = localStorage.getItem("theme") || "cotton-candy";
+            themeLink.href = themePaths[savedTheme];
+            themeSelect.value = savedTheme;
+
+            // Change theme on selection
+            themeSelect.addEventListener("change", function () {
+                const selectedTheme = themeSelect.value;
+                themeLink.href = themePaths[selectedTheme];
+                localStorage.setItem("theme", selectedTheme);
+            });
+        });
+    </script>
+</head>
+<body>  
+    <h1 class="pixelify-sans-head">To-Do List</h1>
+
+    <!-- Theme Switcher -->
+    <label class="pixelify-sans-head" for="theme-select">Choose a Theme:</label>
+    <select class="pixelify-sans-head" id="theme-select">
+        <option value="cotton-candy">Cotton Candy</option>
+        <option value="autumn">Autumn</option>
+        <option value="swamp">Swamp</option>
+        <option value="sunflower">Sunflower</option>
+    </select>
+
+    <!-- Form to Add Tasks -->
+    <form id="task-form">
+        <input class="pixelify-sans-head" type="text" id="task-title" placeholder="New task" required>
+        <label class="pixelify-sans-head" for="task-due">Due:</label>
+        <input class="pixelify-sans-head" type="date" id="task-due">
+        <button class="pixelify-sans-head" type="submit">Add</button>
+    </form>
+
+    <!-- Sorting Dropdown -->
+    <label class="pixelify-sans-head" for="sort-select">Sort by:</label>
+    <select class="pixelify-sans-head" id="sort-select">
+        <option value="date_created">Created</option>
+        <option value="name">Name (A-Z)</option>
+        <option value="date_due">Due Date</option>
+    </select>
+
+    <!-- List of Items -->
+    <ul id="task-list"></ul>
+
+    <script>
+        // Basic task storage (in-memory)
+        let tasks = [];
+
+        document.getElementById("task-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById("task-title").value.trim();
+            const dueDate = document.getElementById("task-due").value;
+
+            if (title) {
+                tasks.push({
+                    title: title,
+                    dueDate: dueDate || null,
+                    completed: false,
+                    createdAt: new Date()
+                });
+
+                document.getElementById("task-form").reset();
+                renderTasks();
+            }
+        });
+
+        function renderTasks() {
+            const taskList = document.getElementById("task-list");
+            taskList.innerHTML = "";
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement("li");
+                li.className = "pixelify-sans-head";
+
+                li.innerHTML = `
+                    <span class="${task.completed ? 'completed' : ''}">
+                        ${task.title}
+                        ${task.dueDate ? `<small>(Due: ${task.dueDate})</small>` : ""}
+                    </span>
+                    <button onclick="toggleTask(${index})">✔</button>
+                    <button onclick="deleteTask(${index})">🗑️</button>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        function toggleTask(index) {
+            tasks[index].completed = !tasks[index].completed;
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        document.getElementById("sort-select").addEventListener("change", function() {
+            const sortBy = this.value;
+            localStorage.setItem("sort_by", sortBy);
+
+            if (sortBy === "name") {
+                tasks.sort((a, b) => a.title.localeCompare(b.title));
+            } else if (sortBy === "date_due") {
+                tasks.sort((a, b) => (a.dueDate || "") > (b.dueDate || "") ? 1 : -1);
+            } else {
+                tasks.sort((a, b) => a.createdAt - b.createdAt);
+            }
+
+            renderTasks();
+        });
+
+        // Load saved sort option
+        const savedSort = localStorage.getItem("sort_by");
+        if (savedSort) {
+            document.getElementById("sort-select").value = savedSort;
+        }
+    </script>
+      <iframe width="600" height="350" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1" title="lofi hip hop radio 📚 beats to relax/study to" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </body>
+</html>
